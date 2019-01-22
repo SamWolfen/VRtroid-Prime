@@ -248,7 +248,6 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.020575486
       objectReference: {fileID: 0}
-<<<<<<< HEAD
     - target: {fileID: 400004, guid: f46c5d2b257131f41a97d158f1a03b3d, type: 3}
       propertyPath: m_LocalScale.x
       value: 8.4805
@@ -265,8 +264,6 @@ PrefabInstance:
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-=======
->>>>>>> 59d847201a0bef6994ff715b08f93130af5810b4
     - target: {fileID: 3300002, guid: f46c5d2b257131f41a97d158f1a03b3d, type: 3}
       propertyPath: m_Mesh
       value: 

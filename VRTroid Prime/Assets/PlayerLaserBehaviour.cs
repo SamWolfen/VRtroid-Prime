@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerLaserBehaviour : MonoBehaviour {
     public GameObject Lasers;
     public GameObject Plane;
+    public GameObject Muzzle;
     Rigidbody m_Rigidbody;
     public float speed;
     Transform LocalZero;
@@ -13,9 +14,10 @@ public class PlayerLaserBehaviour : MonoBehaviour {
     private void OnEnable()
     {
         Debug.Log("enabled");
-        LocalZero = Plane.transform;
+        LocalZero = Muzzle.transform;
         Lasers.transform.position = LocalZero.position;
         Lasers.transform.rotation = LocalZero.rotation;
+        m_Rigidbody.velocity = transform.forward * speed;
 
     }
 
@@ -45,7 +47,7 @@ public class PlayerLaserBehaviour : MonoBehaviour {
             Lifetime = initLifetime;
             gameObject.SetActive(false);
         }
-
+        Debug.Log("Velo of " + gameObject.name + ": " + m_Rigidbody.velocity);
         LocalZero = Plane.transform;
 	}
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 public class CannonFunction : MonoBehaviour
 {
     public GameObject LaserPool;
+    
+
     int LaserPoolSize = 0;
     int LaserPoolCounter = 0;
 
@@ -24,7 +26,33 @@ public class CannonFunction : MonoBehaviour
         if ((Input.GetButtonDown("Fire1")) /*|| (Input.GetButtonDown())*/)
         {
             Debug.Log("FIRING MAH LASER!!! " + LaserPool.GetComponent<PoolGenerator>().PoolObjectList[LaserPoolCounter].name);
-            LaserPool.GetComponent<PoolGenerator>().PoolObjectList[LaserPoolCounter].SetActive(true);
+
+            if (LaserPool.GetComponent<PoolGenerator>().PoolObjectList[LaserPoolCounter].activeSelf == false)
+            {
+                LaserPool.GetComponent<PoolGenerator>().PoolObjectList[LaserPoolCounter].SetActive(true);
+            }
+            else
+            {
+                LaserPool.GetComponent<PoolGenerator>().PoolObjectList[LaserPoolCounter].SetActive(false);
+                LaserPool.GetComponent<PoolGenerator>().PoolObjectList[LaserPoolCounter].SetActive(true);
+            }
+
+
+            if(LaserPool.GetComponent<PoolGenerator>().SecondPool)
+            { 
+                
+
+                if (LaserPool.GetComponent<PoolGenerator>().PoolObject2List[LaserPoolCounter].activeSelf == false)
+                {
+                    LaserPool.GetComponent<PoolGenerator>().PoolObject2List[LaserPoolCounter].SetActive(true);
+                }
+                else
+                {
+                    LaserPool.GetComponent<PoolGenerator>().PoolObject2List[LaserPoolCounter].SetActive(false);
+                    LaserPool.GetComponent<PoolGenerator>().PoolObject2List[LaserPoolCounter].SetActive(true);
+                }
+
+            }
 
             LaserPoolCounter++;
 

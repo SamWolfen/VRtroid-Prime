@@ -17,7 +17,11 @@ public class PlayerLaserBehaviour : MonoBehaviour {
         LocalZero = Muzzle.transform;
         Lasers.transform.position = LocalZero.position;
         Lasers.transform.rotation = LocalZero.rotation;
-        m_Rigidbody.velocity = transform.forward * speed;
+        try
+        {
+            m_Rigidbody.velocity = transform.forward * speed;
+        }
+        catch { };
 
     }
 
@@ -47,7 +51,7 @@ public class PlayerLaserBehaviour : MonoBehaviour {
             Lifetime = initLifetime;
             gameObject.SetActive(false);
         }
-        Debug.Log("Velo of " + gameObject.name + ": " + m_Rigidbody.velocity);
+        //Debug.Log("Velo of " + gameObject.name + ": " + m_Rigidbody.velocity);
         LocalZero = Plane.transform;
 	}
 }

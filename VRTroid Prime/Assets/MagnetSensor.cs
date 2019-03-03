@@ -73,6 +73,7 @@ public class MagnetSensor : MonoBehaviour
             try
             {
                 GetComponent<InputManager>().OnCardboardTrigger();
+                GetComponent<InputManager>().Debugger.GetComponent<DebugInfo>().Magnet = true;
             }
             catch { }
 

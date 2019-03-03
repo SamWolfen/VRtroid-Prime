@@ -5,7 +5,7 @@ using UnityEngine;
 public class PoolGenerator : MonoBehaviour {
     public GameObject Pool;
     public GameObject PoolObject;
-    static int PoolSize = 100;
+    static int PoolSize = 10;
     public List<GameObject> PoolObjectList = new List<GameObject>(PoolSize);
 
     public bool SecondPool;

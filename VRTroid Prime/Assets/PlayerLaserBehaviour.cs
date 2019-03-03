@@ -6,6 +6,7 @@ public class PlayerLaserBehaviour : MonoBehaviour {
     public GameObject Lasers;
     public GameObject Plane;
     public GameObject Muzzle;
+    public GameObject Debugger;
     Rigidbody m_Rigidbody;
     public float speed;
     Transform LocalZero;
@@ -14,6 +15,7 @@ public class PlayerLaserBehaviour : MonoBehaviour {
     private void OnEnable()
     {
         Debug.Log("enabled");
+        StartCoroutine(BulletLife());
         LocalZero = Muzzle.transform;
         Lasers.transform.position = LocalZero.position;
         Lasers.transform.rotation = LocalZero.rotation;
@@ -38,20 +40,29 @@ public class PlayerLaserBehaviour : MonoBehaviour {
         
     }
 
-    
+
 
     // Update is called once per frame
-    void Update () {
-        if (Lifetime > 0)
+    IEnumerator BulletLife()
+    {
+        bool loop = true;
+
+        while (loop)
         {
-            Lifetime -= (Time.deltaTime); ;
+            yield return new WaitForSecondsRealtime(1f);
+            if (Lifetime > 0)
+            {
+                Lifetime -= (Time.deltaTime); ;
+            }
+            else
+            {
+                Debugger.GetComponent<DebugInfo>().BulletsActive--;
+                Lifetime = initLifetime;
+                gameObject.SetActive(false);
+                loop = false;
+            }
+            //Debug.Log("Velo of " + gameObject.name + ": " + m_Rigidbody.velocity);
+            LocalZero = Plane.transform;
         }
-        else
-        {
-            Lifetime = initLifetime;
-            gameObject.SetActive(false);
-        }
-        //Debug.Log("Velo of " + gameObject.name + ": " + m_Rigidbody.velocity);
-        LocalZero = Plane.transform;
 	}
 }

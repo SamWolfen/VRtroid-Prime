@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2de22ee59b43f1a4d99ae6831b413edc
+guid: 8ca196ee836d58f4ba81562f1fb5a630
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -9,11 +9,27 @@ ModelImporter:
     400002: default
     2100000: Metallic_0
     2100002: Metallic_1
+    2100004: Metallic_2
     2300000: default
     3300000: default
     4300000: default
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metallic_0
+    second: {fileID: 2100000, guid: c6f6a71677dfd23478a45c0f9b2c076e, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metallic_1
+    second: {fileID: 2100000, guid: cc064032adb7233429b8cbc556fb407a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metallic_2
+    second: {fileID: 2100000, guid: 5af8f969c7fd041429497832fd2292d4, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
